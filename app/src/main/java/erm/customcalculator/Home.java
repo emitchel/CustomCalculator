@@ -115,6 +115,7 @@ public class Home extends AppCompatActivity
         transaction.replace(R.id.content, frag,CURRENT_FRAGMENT_TAG);
         transaction.addToBackStack(CURRENT_FRAGMENT_TAG);
         transaction.commit();
+        
     }
 
     private CalcBase getContent(){
