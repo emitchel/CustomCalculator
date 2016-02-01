@@ -1,0 +1,27 @@
+-Normal Math
+	-Two numbers & one operation (+ - * /)
+-Probability
+	-Permutation
+	-Binomial Probability
+	-Geometric Probability
+	-Standard deviation of a Sampling Distro.
+	-Z-Score
+	-Confidence Interval
+-Shapes
+	-NOT COMPLETED
+-Trig
+	-Sine: Opposite / Hypotenuse
+	-Cosine: Adjacent / Hypotenuse
+	-Tangent: Opposite / Adjacent
+	-Arc Sine
+	-Arc Cosine
+	-Arc Tangent
+	-Convert angle to radians
+	-Convert angle to degrees
+-Newton Stuff
+	-Net Force 
+    -Gravitational Force 
+    -Mass of Object 
+	-Distance between objects 
+-Quadratic Formula
+	-Not Completed
