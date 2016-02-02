@@ -10,6 +10,7 @@ import java.math.BigInteger;
 
 import erm.customcalculator.R;
 import erm.customcalculator.classes.ClipboardManager;
+import erm.customcalculator.classes.HistoryManager;
 import erm.customcalculator.classes.Utils;
 
 /**
@@ -85,7 +86,14 @@ public abstract class CalcBase extends Fragment {
 
     public void logResult(String nameOfResult, String result) {
         //log the result for  a history section (would be really nice)
+        HistoryManager hm = new HistoryManager(getActivity());
+        hm.add(nameOfResult, result);
 
+    }
+
+    public void showHistory(){
+        HistoryManager hm = new HistoryManager(getActivity());
+        hm.showHistoryPopup();
     }
 
     //** Helper Methods for subclasses **//

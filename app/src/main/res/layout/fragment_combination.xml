@@ -14,7 +14,7 @@ android:padding="16dp">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Value n"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:padding="16dp" />
 </android.support.design.widget.TextInputLayout>
 
@@ -27,7 +27,7 @@ android:padding="16dp">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Value r"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:padding="16dp" />
 </android.support.design.widget.TextInputLayout>
 </LinearLayout>

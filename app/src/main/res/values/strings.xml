@@ -9,6 +9,7 @@
     <string name="creator">Created By Elliot M.</string>
 
     <string name="clear">Clear</string>
+    <string name="history">History</string>
     <string name="ok">Ok</string>
     <string name="copy">Copy result to clipboard</string>
     <string name="copied_to_cb">Copied to clipboard</string>

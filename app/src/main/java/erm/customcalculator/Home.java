@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import erm.customcalculator.classes.HistoryManager;
 import erm.customcalculator.enums.Calculations;
 import erm.customcalculator.fragments.ArithmeticFragment;
 import erm.customcalculator.fragments.CalcBase;
@@ -116,6 +117,10 @@ public class Home extends AppCompatActivity
             CalcBase frag = getContent();
             if (frag != null)
                 frag.clearPage();
+            return true;
+        } else if(id == R.id.action_history){
+            HistoryManager hm = new HistoryManager(this);
+            hm.showHistoryPopup();
             return true;
         }
 
