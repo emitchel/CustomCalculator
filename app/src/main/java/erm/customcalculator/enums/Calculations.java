@@ -6,12 +6,13 @@ import erm.customcalculator.R;
 import erm.customcalculator.classes.Utils;
 import erm.customcalculator.fragments.ArithmeticFragment;
 import erm.customcalculator.fragments.CalcBase;
+import erm.customcalculator.fragments.CombinationFragment;
 
 /**
  * Created by ellio on 1/31/2016.
  */
 public enum Calculations {
-    ARITHMETIC,PERMUTATION,BINOMIAL_PROBABILITY,GEOMETRIC_PROBABILITY, STD_DEV_SPL_DISTRO,Z_SCORE,CONFIDENCE_INT,SINE,COSINE,TANGENT,A_SINE,A_COSINE,A_TANGENT,ANGLE_RADIANS,ANGLE_DEGRESS,NET_FORCE,GRAV_FORCE,MASS,DIST_BET_OBJ,QUAD_FORMULA;
+    ARITHMETIC,COMBINATION,PERMUTATION,BINOMIAL_PROBABILITY,GEOMETRIC_PROBABILITY, STD_DEV_SPL_DISTRO,Z_SCORE,CONFIDENCE_INT,SINE,COSINE,TANGENT,A_SINE,A_COSINE,A_TANGENT,ANGLE_RADIANS,ANGLE_DEGRESS,NET_FORCE,GRAV_FORCE,MASS,DIST_BET_OBJ,QUAD_FORMULA;
 
 
 
@@ -24,6 +25,8 @@ public enum Calculations {
 
            if(title.contains(context.getString(R.string.arithmetic))) {
                eCalc = ARITHMETIC;
+           } else if(title.contains(context.getString(R.string.combination))){
+               eCalc = COMBINATION;
            } else if(title.contains(context.getString(R.string.permutation))){
                eCalc = PERMUTATION;
            } else if(title.contains(context.getString(R.string.binomial_probability))){
@@ -70,8 +73,10 @@ public enum Calculations {
     public static CalcBase getFragmentByCalculation(Calculations eCalc){
         CalcBase frag= new ArithmeticFragment(); //default if none found
 
-        if(eCalc==ARITHMETIC){
+        if(eCalc==ARITHMETIC) {
             frag = new ArithmeticFragment();
+        } else if(eCalc == COMBINATION){
+            frag = new CombinationFragment();
         } else if(eCalc == PERMUTATION){
             frag = new ArithmeticFragment();
         }else if(eCalc == BINOMIAL_PROBABILITY){

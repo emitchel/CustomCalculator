@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import erm.customcalculator.enums.Calculations;
+import erm.customcalculator.fragments.ArithmeticFragment;
 import erm.customcalculator.fragments.CalcBase;
 
 public class Home extends AppCompatActivity
@@ -28,30 +29,59 @@ public class Home extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Toolbar toolbar = setUpToolbar();
+
+        setUpObjects();
+
+        setUpFab();
+
+        setUpDrawer(toolbar);
+
+        setUpNavigation();
+
+        setContentIfNone();
+    }
+
+    private void setUpObjects() {
+        mContent = (FrameLayout) findViewById(R.id.content);
+    }
+
+    private Toolbar setUpToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        return toolbar;
+    }
 
-        mContent = (FrameLayout)findViewById(R.id.content);
+    private void setUpNavigation() {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CalcBase frag = getContent();
-                if(frag!=null)
-                    frag.calculateAndDisplay();
-            }
-        });
-
+    private void setUpDrawer(Toolbar toolbar) {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+    }
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+    private void setUpFab() {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CalcBase frag = getContent();
+                if (frag != null)
+                    frag.calculateAndDisplay();
+            }
+        });
+    }
+
+    private void setContentIfNone() {
+        Fragment frag = getContent();
+        if (frag == null)
+            changeContext(new ArithmeticFragment());
     }
 
     @Override
@@ -62,7 +92,7 @@ public class Home extends AppCompatActivity
         } else {
             super.onBackPressed();
             CalcBase frag = getContent();
-            if(frag!=null)
+            if (frag != null)
                 setTitle(frag.getNameOfCalculation());
         }
     }
@@ -84,7 +114,7 @@ public class Home extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_clear_page) {
             CalcBase frag = getContent();
-            if(frag!=null)
+            if (frag != null)
                 frag.clearPage();
             return true;
         }
@@ -103,25 +133,23 @@ public class Home extends AppCompatActivity
         changeContext(frag);
 
         setTitle(title);
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void changeContext(CalcBase frag){
+    private void changeContext(CalcBase frag) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.content, frag,CURRENT_FRAGMENT_TAG);
+        transaction.replace(R.id.content, frag, CURRENT_FRAGMENT_TAG);
         transaction.addToBackStack(CURRENT_FRAGMENT_TAG);
         transaction.commit();
-        
+
     }
 
-    private CalcBase getContent(){
-        Fragment frag = getSupportFragmentManager().findFragmentByTag( CURRENT_FRAGMENT_TAG);
-        if(frag!=null && frag instanceof CalcBase){
-            return (CalcBase)frag;
+    private CalcBase getContent() {
+        Fragment frag = getSupportFragmentManager().findFragmentByTag(CURRENT_FRAGMENT_TAG);
+        if (frag != null && frag instanceof CalcBase) {
+            return (CalcBase) frag;
         } else {
             return null;
         }

@@ -10,6 +10,8 @@
 
     <string name="clear">Clear</string>
     <string name="ok">Ok</string>
+    <string name="copy">Copy result to clipboard</string>
+    <string name="copied_to_cb">Copied to clipboard</string>
 
     <string name="arithmetic_options">Arithmetic Options</string>
 
@@ -18,6 +20,7 @@
     <string name="arithmetic">Arithmetic</string>
 
     <string name="probability">Probability</string>
+    <string name="combination">Combination</string>
     <string name="permutation">Permutation</string>
     <string name="binomial_probability">Binomial Probability</string>
     <string name="geometric_probability">Geometric Probability</string>

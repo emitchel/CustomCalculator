@@ -80,10 +80,9 @@ public class ArithmeticFragment extends CalcBase {
     }
 
     @Override
-    public String calculate() {
+    public String calculate() throws Exception {
         Arithmetic eArithmetic = Arithmetic.getArithmeticByString(mOptions.getSelectedItem().toString());
 
-        try {
             double value1 = Double.parseDouble(mValue1.getText().toString());
             double value2 = Double.parseDouble(mValue2.getText().toString());
 
@@ -99,8 +98,6 @@ public class ArithmeticFragment extends CalcBase {
             }
 
             return "Error on computation";
-        } catch(Exception e){
-            return e.getMessage();
-        }
+
     }
 }

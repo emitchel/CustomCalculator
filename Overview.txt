@@ -1,6 +1,7 @@
 -Normal Math
 	-Two numbers & one operation (+ - * /)
 -Probability
+	-Combination
 	-Permutation
 	-Binomial Probability
 	-Geometric Probability
