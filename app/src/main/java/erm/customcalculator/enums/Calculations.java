@@ -4,13 +4,20 @@ import android.content.Context;
 
 import erm.customcalculator.R;
 import erm.customcalculator.classes.Utils;
+import erm.customcalculator.fragments.AngleConversionFragment;
+import erm.customcalculator.fragments.ArcSinCosTangFragment;
 import erm.customcalculator.fragments.ArithmeticFragment;
 import erm.customcalculator.fragments.BinProbFragment;
 import erm.customcalculator.fragments.CalcBase;
 import erm.customcalculator.fragments.CombinationFragment;
 import erm.customcalculator.fragments.ConfidenceIntervalFragment;
+import erm.customcalculator.fragments.DistanceBetweenObjectsFragment;
 import erm.customcalculator.fragments.GeoProbFragment;
+import erm.customcalculator.fragments.GravitationalForceFragment;
+import erm.customcalculator.fragments.MassOfObjectFragment;
+import erm.customcalculator.fragments.NetForceFragment;
 import erm.customcalculator.fragments.PermutationFragment;
+import erm.customcalculator.fragments.QuadraticFormulaFragment;
 import erm.customcalculator.fragments.SineCosineTangentFragment;
 import erm.customcalculator.fragments.StdDeviationOfSamplingDistributionFragment;
 import erm.customcalculator.fragments.ZScoreFragment;
@@ -20,7 +27,7 @@ import erm.customcalculator.fragments.ZScoreFragment;
  */
 public enum Calculations {
     ARITHMETIC,COMBINATION,PERMUTATION,BINOMIAL_PROBABILITY,GEOMETRIC_PROBABILITY, STD_DEV_SPL_DISTRO,Z_SCORE,CONFIDENCE_INT,
-    SINE_COSINE_TANGENT,SINE,COSINE,TANGENT,A_SINE,A_COSINE,A_TANGENT,ANGLE_RADIANS,ANGLE_DEGRESS,NET_FORCE,GRAV_FORCE,MASS,DIST_BET_OBJ,QUAD_FORMULA;
+    SINE_COSINE_TANGENT,ARC_SINE_COSINE_TANGENT,DEGREES_RADIANS,NET_FORCE,GRAV_FORCE,MASS,DIST_BET_OBJ,QUAD_FORMULA;
 
 
 
@@ -49,22 +56,10 @@ public enum Calculations {
                eCalc = CONFIDENCE_INT;
            } else if(title.contains(context.getString(R.string.sine_cosine_tangent))){
                 eCalc = SINE_COSINE_TANGENT;
-           }else if(title.contains(context.getString(R.string.sin))){
-               eCalc = SINE;
-           }else if(title.contains(context.getString(R.string.cosine))){
-               eCalc = COSINE;
-           }else if(title.contains(context.getString(R.string.tangent))){
-               eCalc = TANGENT;
-           }else if(title.contains(context.getString(R.string.arc_sine))){
-               eCalc = A_SINE;
-           }else if(title.contains(context.getString(R.string.arc_cosine))){
-               eCalc = A_COSINE;
-           }else if(title.contains(context.getString(R.string.arc_tangent))){
-               eCalc = A_TANGENT;
-           }else if(title.contains(context.getString(R.string.angle_degrees))){
-               eCalc = ANGLE_DEGRESS;
-           }else if(title.contains(context.getString(R.string.angle_radian))){
-               eCalc = ANGLE_RADIANS;
+           }else if(title.contains(context.getString(R.string.arc_sine_cosine_tangent))){
+               eCalc = ARC_SINE_COSINE_TANGENT;
+           }else if(title.contains(context.getString(R.string.degrees_radians))){
+               eCalc = DEGREES_RADIANS;
            }else if(title.contains(context.getString(R.string.net_force))){
                eCalc = NET_FORCE;
            }else if(title.contains(context.getString(R.string.gravitation_force))){
@@ -99,32 +94,22 @@ public enum Calculations {
             frag = new ZScoreFragment();
         }else if(eCalc == CONFIDENCE_INT){
             frag = new ConfidenceIntervalFragment();
-        }else if(eCalc == SINE){
+        }else if(eCalc == SINE_COSINE_TANGENT){
             frag = new SineCosineTangentFragment();
-        }else if(eCalc == COSINE){
-            frag = new SineCosineTangentFragment();
-        }else if(eCalc == TANGENT){
-            frag = new SineCosineTangentFragment();
-        }else if(eCalc == A_SINE){
-            frag = new ArithmeticFragment();
-        }else if(eCalc == A_COSINE){
-            frag = new ArithmeticFragment();
-        }else if(eCalc == A_TANGENT){
-            frag = new ArithmeticFragment();
-        } else if(eCalc == ANGLE_DEGRESS){
-            frag = new ArithmeticFragment();
-        }else if(eCalc == ANGLE_RADIANS){
-            frag = new ArithmeticFragment();
+        }else if(eCalc == ARC_SINE_COSINE_TANGENT){
+            frag = new ArcSinCosTangFragment();
+        }else if(eCalc == DEGREES_RADIANS){
+            frag = new AngleConversionFragment();
         }else if(eCalc == NET_FORCE){
-            frag = new ArithmeticFragment();
+            frag = new NetForceFragment();
         }else if(eCalc == GRAV_FORCE){
-            frag = new ArithmeticFragment();
+            frag = new GravitationalForceFragment();
         }else if(eCalc == MASS){
-            frag = new ArithmeticFragment();
+            frag = new MassOfObjectFragment();
         }else if(eCalc == DIST_BET_OBJ){
-            frag = new ArithmeticFragment();
+            frag = new DistanceBetweenObjectsFragment();
         }else if(eCalc == QUAD_FORMULA){
-            frag = new ArithmeticFragment();
+            frag = new QuadraticFormulaFragment();
         }
         return frag;
     }

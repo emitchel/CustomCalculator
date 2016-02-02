@@ -16,4 +16,9 @@
         <item>ArcCosine</item>
         <item>ArcTangent</item>
     </array>
+    <array name="angle_conversion">
+        <item>to Degrees</item>
+        <item>to Radians</item>
+
+    </array>
 </resources>

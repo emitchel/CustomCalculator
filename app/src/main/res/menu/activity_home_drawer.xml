@@ -47,28 +47,13 @@
     <item android:title="@string/trig">
         <menu>
             <item
-                android:title="@string/sin"
+                android:title="@string/sine_cosine_tangent"
                 android:icon="@android:drawable/ic_menu_send"/>
             <item
-                android:title="@string/cosine"
+                android:title="@string/arc_sine_cosine_tangent"
                 android:icon="@android:drawable/ic_menu_send"/>
             <item
-                android:title="@string/tangent"
-                android:icon="@android:drawable/ic_menu_send"/>
-            <item
-                android:title="@string/arc_sine"
-                android:icon="@android:drawable/ic_menu_send"/>
-            <item
-                android:title="@string/arc_cosine"
-                android:icon="@android:drawable/ic_menu_send"/>
-            <item
-                android:title="@string/arc_tangent"
-                android:icon="@android:drawable/ic_menu_send" />
-            <item
-                android:title="@string/angle_degrees"
-                android:icon="@android:drawable/ic_menu_send"/>
-            <item
-                android:title="@string/angle_radian"
+                android:title="@string/degrees_radians"
                 android:icon="@android:drawable/ic_menu_send"/>
 
         </menu>

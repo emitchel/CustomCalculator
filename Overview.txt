@@ -5,24 +5,27 @@
 	x-Permutation
 	x-Binomial Probability
 	x-Geometric Probability
-	-Standard deviation of a Sampling Distro.
-	-Z-Score
-	-Confidence Interval
+	x-Standard deviation of a Sampling Distro.
+	x-Z-Score
+	x-Confidence Interval
 -Shapes
 	-NOT COMPLETED
 -Trig
-	-Sine: Opposite / Hypotenuse
-	-Cosine: Adjacent / Hypotenuse
-	-Tangent: Opposite / Adjacent
-	-Arc Sine
-	-Arc Cosine
-	-Arc Tangent
-	-Convert angle to radians
-	-Convert angle to degrees
+	x-Sine: Opposite / Hypotenuse
+	x-Cosine: Adjacent / Hypotenuse
+	x-Tangent: Opposite / Adjacent
+	x-Arc Sine
+	x-Arc Cosine
+	x-Arc Tangent
+	x-Convert angle to radians
+	x-Convert angle to degrees
 -Newton Stuff
 	-Net Force 
     -Gravitational Force 
     -Mass of Object 
 	-Distance between objects 
 -Quadratic Formula
-	-Not Completed
+	-Quadrativ Formula
+
+	-History (just text) adapter in popup
+	-History in menu otpion

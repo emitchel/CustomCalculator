@@ -35,9 +35,11 @@
     <string name="sin">Sine</string>
     <string name="cosine">Cosine</string>
     <string name="tangent">Tangent</string>
+    <string name="arc_sine_cosine_tangent">Arc Sine/Cosine/Tangent</string>
     <string name="arc_sine">Arc Sine</string>
     <string name="arc_cosine">Arc Cosine</string>
     <string name="arc_tangent">Arc Tangent</string>
+    <string name="degrees_radians">Angle to Degrees/Radians</string>
     <string name="angle_degrees">Angle to Degrees</string>
     <string name="angle_radian">Angle to Radians</string>
 

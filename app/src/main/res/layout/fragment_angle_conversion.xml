@@ -13,17 +13,16 @@
             android:id="@+id/angle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Angle"
+            android:hint="Angle to convert"
             android:inputType="numberDecimal"
             android:padding="16dp" />
     </android.support.design.widget.TextInputLayout>
-
 
     <Spinner
         android:id="@+id/options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:entries="@array/angle_options" />
+        android:entries="@array/angle_conversion"/>
 
 </LinearLayout>

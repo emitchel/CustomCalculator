@@ -17,6 +17,8 @@ import erm.customcalculator.classes.Utils;
  * Base class to extend from
  */
 public abstract class CalcBase extends Fragment {
+    public static double NEWTON_GRAV_CONSTANT = 6.674 * (Math.pow(10, -11));
+
     public abstract String getNameOfCalculation();
 
 
