@@ -31,6 +31,7 @@
     <string name="shapes">Shapes</string>
 
     <string name="trig">Trigonometry</string>
+    <string name="sine_cosine_tangent">Sine/Cosine/Tangent</string>
     <string name="sin">Sine</string>
     <string name="cosine">Cosine</string>
     <string name="tangent">Tangent</string>

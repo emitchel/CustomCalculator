@@ -1,10 +1,10 @@
 -Normal Math
-	-Two numbers & one operation (+ - * /)
+	x-Two numbers & one operation (+ - * /)
 -Probability
-	-Combination
-	-Permutation
-	-Binomial Probability
-	-Geometric Probability
+	x-Combination
+	x-Permutation
+	x-Binomial Probability
+	x-Geometric Probability
 	-Standard deviation of a Sampling Distro.
 	-Z-Score
 	-Confidence Interval

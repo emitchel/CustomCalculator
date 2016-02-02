@@ -8,13 +8,19 @@ import erm.customcalculator.fragments.ArithmeticFragment;
 import erm.customcalculator.fragments.BinProbFragment;
 import erm.customcalculator.fragments.CalcBase;
 import erm.customcalculator.fragments.CombinationFragment;
+import erm.customcalculator.fragments.ConfidenceIntervalFragment;
+import erm.customcalculator.fragments.GeoProbFragment;
 import erm.customcalculator.fragments.PermutationFragment;
+import erm.customcalculator.fragments.SineCosineTangentFragment;
+import erm.customcalculator.fragments.StdDeviationOfSamplingDistributionFragment;
+import erm.customcalculator.fragments.ZScoreFragment;
 
 /**
  * Created by ellio on 1/31/2016.
  */
 public enum Calculations {
-    ARITHMETIC,COMBINATION,PERMUTATION,BINOMIAL_PROBABILITY,GEOMETRIC_PROBABILITY, STD_DEV_SPL_DISTRO,Z_SCORE,CONFIDENCE_INT,SINE,COSINE,TANGENT,A_SINE,A_COSINE,A_TANGENT,ANGLE_RADIANS,ANGLE_DEGRESS,NET_FORCE,GRAV_FORCE,MASS,DIST_BET_OBJ,QUAD_FORMULA;
+    ARITHMETIC,COMBINATION,PERMUTATION,BINOMIAL_PROBABILITY,GEOMETRIC_PROBABILITY, STD_DEV_SPL_DISTRO,Z_SCORE,CONFIDENCE_INT,
+    SINE_COSINE_TANGENT,SINE,COSINE,TANGENT,A_SINE,A_COSINE,A_TANGENT,ANGLE_RADIANS,ANGLE_DEGRESS,NET_FORCE,GRAV_FORCE,MASS,DIST_BET_OBJ,QUAD_FORMULA;
 
 
 
@@ -39,8 +45,10 @@ public enum Calculations {
                eCalc = STD_DEV_SPL_DISTRO;
            }else if(title.contains(context.getString(R.string.z_score))){
                eCalc = Z_SCORE;
-           }else if(title.contains(context.getString(R.string.confidence_interval))){
+           }else if(title.contains(context.getString(R.string.confidence_interval))) {
                eCalc = CONFIDENCE_INT;
+           } else if(title.contains(context.getString(R.string.sine_cosine_tangent))){
+                eCalc = SINE_COSINE_TANGENT;
            }else if(title.contains(context.getString(R.string.sin))){
                eCalc = SINE;
            }else if(title.contains(context.getString(R.string.cosine))){
@@ -84,19 +92,19 @@ public enum Calculations {
         }else if(eCalc == BINOMIAL_PROBABILITY){
             frag = new BinProbFragment();
         }else if(eCalc == GEOMETRIC_PROBABILITY){
-            frag = new ArithmeticFragment();
+            frag = new GeoProbFragment();
         }else if(eCalc == STD_DEV_SPL_DISTRO){
-            frag = new ArithmeticFragment();
+            frag = new StdDeviationOfSamplingDistributionFragment();
         }else if(eCalc == Z_SCORE){
-            frag = new ArithmeticFragment();
+            frag = new ZScoreFragment();
         }else if(eCalc == CONFIDENCE_INT){
-            frag = new ArithmeticFragment();
+            frag = new ConfidenceIntervalFragment();
         }else if(eCalc == SINE){
-            frag = new ArithmeticFragment();
+            frag = new SineCosineTangentFragment();
         }else if(eCalc == COSINE){
-            frag = new ArithmeticFragment();
+            frag = new SineCosineTangentFragment();
         }else if(eCalc == TANGENT){
-            frag = new ArithmeticFragment();
+            frag = new SineCosineTangentFragment();
         }else if(eCalc == A_SINE){
             frag = new ArithmeticFragment();
         }else if(eCalc == A_COSINE){

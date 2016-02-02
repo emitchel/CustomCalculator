@@ -53,21 +53,25 @@ public class CombinationFragment extends CalcBase{
 
     @Override
     public String returnMessageIfBadFormData() {
-        n = Integer.valueOf(etN.getText().toString());
-        r = Integer.valueOf(etR.getText().toString());
+
         if(!Utils.isValidString(etN.getText().toString()) || !Utils.isValidString(etR.getText().toString())) {
             return "Both values are needed for computation";
-        } else if (n < r){
-            return "n must be larger than r";
         } else {
-            return "";
+            n = Integer.valueOf(etN.getText().toString());
+            r = Integer.valueOf(etR.getText().toString());
+            //place more checks here as needed
+            if (n < r) {
+                return "n must be larger than r";
+            } else {
+                return "";
+            }
         }
     }
 
     @Override
     public String calculate() {
 
-        BigInteger result = SRC_Calc_Type.BigCombination(n,r);
+        BigInteger result = SRC_Calc_Type.BigCombination(n, r);
 
         return result.toString();
 

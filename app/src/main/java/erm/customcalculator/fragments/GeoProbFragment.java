@@ -15,12 +15,13 @@ import erm.customcalculator.original.src.SRC_Calc_Type;
 /**
  * Created by ellio on 2/1/2016.
  */
-public class PermutationFragment extends CalcBase {
+public class GeoProbFragment extends CalcBase{
 
-    public PermutationFragment(){}
+    public GeoProbFragment(){}
 
-    AppCompatEditText etN,etR;
-    int n,r;
+    AppCompatEditText etNumOfTrials, etProbOfSuccess;
+    double dblNumberOfTrials;
+    double dblProbOfSuccess;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,50 +33,42 @@ public class PermutationFragment extends CalcBase {
     }
 
     private View GatherViews(LayoutInflater inflater, ViewGroup container) {
-        View v = inflater.inflate(R.layout.fragment_combination, container,
+        View v = inflater.inflate(R.layout.fragment_geoprob, container,
                 false);
-        etN = (AppCompatEditText)v.findViewById(R.id.value_n);
-        etR = (AppCompatEditText)v.findViewById(R.id.value_r);
+        etNumOfTrials = (AppCompatEditText)v.findViewById(R.id.num_of_trials);
+        etProbOfSuccess = (AppCompatEditText)v.findViewById(R.id.prob_of_success);
 
         return v;
     }
 
     @Override
     public String getNameOfCalculation() {
-        return getString(R.string.permutation);
+        return getString(R.string.geometric_probability);
     }
 
     @Override
     public void clearPage() {
-        etR.setText("");
-        etN.setText("");
+        etNumOfTrials.setText("");
+        etProbOfSuccess.setText("");
     }
 
     @Override
     public String returnMessageIfBadFormData() {
 
-        if(!Utils.isValidString(etN.getText().toString()) || !Utils.isValidString(etR.getText().toString())) {
+        if(!Utils.isValidString(etNumOfTrials.getText().toString()) || !Utils.isValidString(etProbOfSuccess.getText().toString())) {
             return "Both values are needed for computation";
         } else {
-            n = Integer.valueOf(etN.getText().toString());
-            r = Integer.valueOf(etR.getText().toString());
-
+            dblNumberOfTrials = Double.valueOf(etNumOfTrials.getText().toString());
+            dblProbOfSuccess = Double.valueOf(etProbOfSuccess.getText().toString());
             //place more checks here as needed
-            if (n < r){
-                return "n must be larger than r";
-            } else {
-
-                return "";
-            }
+            return "";
         }
     }
 
     @Override
     public String calculate() {
 
-        BigInteger result = SRC_Calc_Type.BigPermutation(n, r);
-
-        return result.toString();
+        return String.valueOf(dblProbOfSuccess * Math.pow((1 - dblProbOfSuccess), (dblNumberOfTrials- 1)));
 
     }
 }

@@ -95,6 +95,14 @@ public abstract class CalcBase extends Fragment {
         }
     }
 
+    public double getDouble(EditText et){
+        if(!isEmpty(et)){
+            return Double.parseDouble(et.getText().toString());
+        } else {
+            return 0;
+        }
+    }
+
     public boolean isEmpty(EditText et){
         return !Utils.isValidString(et.getText().toString());
     }

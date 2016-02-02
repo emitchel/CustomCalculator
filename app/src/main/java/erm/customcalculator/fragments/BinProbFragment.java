@@ -17,10 +17,11 @@ import erm.customcalculator.original.src.SRC_Calc_Type;
  */
 public class BinProbFragment extends CalcBase {
 
-    public BinProbFragment(){}
+    public BinProbFragment() {
+    }
 
-    AppCompatEditText etN,etR,etP;
-    int n,r;
+    AppCompatEditText etN, etR, etP;
+    int n, r;
     double probabilityOfSuccess;
 
     @Override
@@ -33,18 +34,18 @@ public class BinProbFragment extends CalcBase {
     }
 
     private View GatherViews(LayoutInflater inflater, ViewGroup container) {
-        View v = inflater.inflate(R.layout.fragment_combination, container,
+        View v = inflater.inflate(R.layout.fragment_binprob, container,
                 false);
-        etN = (AppCompatEditText)v.findViewById(R.id.value_n);
-        etR = (AppCompatEditText)v.findViewById(R.id.value_r);
-        etP = (AppCompatEditText)v.findViewById(R.id.value_p);
+        etN = (AppCompatEditText) v.findViewById(R.id.value_n);
+        etR = (AppCompatEditText) v.findViewById(R.id.value_r);
+        etP = (AppCompatEditText) v.findViewById(R.id.value_p);
 
         return v;
     }
 
     @Override
     public String getNameOfCalculation() {
-        return getString(R.string.combination);
+        return getString(R.string.binomial_probability);
     }
 
     @Override
@@ -56,24 +57,37 @@ public class BinProbFragment extends CalcBase {
 
     @Override
     public String returnMessageIfBadFormData() {
-        n = Integer.valueOf(etN.getText().toString());
-        r = Integer.valueOf(etR.getText().toString());
-        probabilityOfSuccess = Double.valueOf(etP.getText().toString());
-        if(isEmpty(etN) || isEmpty(etR) || isEmpty(etP)) {
+
+        if (isEmpty(etN) || isEmpty(etR) || isEmpty(etP)) {
             return "All values are needed for computation";
-        } else if (n < r){
-            return "n must be larger than r";
         } else {
-            return "";
+            n = Integer.valueOf(etN.getText().toString());
+            r = Integer.valueOf(etR.getText().toString());
+            probabilityOfSuccess = Double.valueOf(etP.getText().toString());
+
+            //place more checks here as needed
+            if (n < r) {
+                return "n must be larger than r";
+            } else {
+
+                return "";
+            }
         }
     }
 
     @Override
-    public String calculate() {
+    public String calculate() throws Exception {
+        int numberOfFailures = n - r;
+        double probabilityOfFailures = 1 - probabilityOfSuccess;
+        //nCr
+        BigInteger nCr = SRC_Calc_Type.BigCombination(n, r);
+        //p^k
+        double probSuccessToNumOfSuccess = Math.pow(probabilityOfSuccess, r);
+        //q^(n-k)
+        double probFailureToNumOfFails= Math.pow(probabilityOfFailures,numberOfFailures);
 
-        String result = "";
+        return String.valueOf(nCr.doubleValue() * probSuccessToNumOfSuccess * probFailureToNumOfFails);
 
-        return result.toString();
 
     }
 }

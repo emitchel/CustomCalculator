@@ -32,6 +32,10 @@ public class SRC_Calc_Type {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     *     nCr
+     */
+
     public static BigInteger BigCombination(final int N, final int K) {
         BigInteger ret = BigInteger.ONE;
         for (int k = 0; k < K; k++) {
@@ -41,6 +45,12 @@ public class SRC_Calc_Type {
         return ret;
     }
 
+    /**
+     * nPr
+     * @param n
+     * @param k
+     * @return
+     */
     public static BigInteger BigPermutation(int n, int k) {
         BigInteger result = new BigInteger("1");
         int i;

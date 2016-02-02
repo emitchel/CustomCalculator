@@ -9,11 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_n"
+        <EditText
+            android:id="@+id/value_x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Number of trials"
+            android:hint="Value X"
             android:inputType="numberDecimal"
             android:padding="16dp" />
     </android.support.design.widget.TextInputLayout>
@@ -22,24 +22,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_r"
+        <EditText
+            android:id="@+id/value_mean"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Number of successes"
+            android:hint="Mean value"
             android:inputType="numberDecimal"
             android:padding="16dp" />
     </android.support.design.widget.TextInputLayout>
+
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_p"
+        <EditText
+            android:id="@+id/value_stddev"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Probability of Success"
+            android:hint="Std Dev"
             android:inputType="numberDecimal"
             android:padding="16dp" />
     </android.support.design.widget.TextInputLayout>

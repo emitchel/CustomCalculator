@@ -9,11 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_n"
+        <EditText
+            android:id="@+id/value_sampleproportion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Number of trials"
+            android:hint="Sample Proportion"
             android:inputType="numberDecimal"
             android:padding="16dp" />
     </android.support.design.widget.TextInputLayout>
@@ -22,24 +22,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_r"
+        <EditText
+            android:id="@+id/value_criticalvalue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Number of successes"
+            android:hint="Critical Value"
             android:inputType="numberDecimal"
             android:padding="16dp" />
     </android.support.design.widget.TextInputLayout>
+
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_p"
+        <EditText
+            android:id="@+id/value_samplesize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Probability of Success"
+            android:hint="Sample Size"
             android:inputType="numberDecimal"
             android:padding="16dp" />
     </android.support.design.widget.TextInputLayout>

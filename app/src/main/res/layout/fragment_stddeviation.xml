@@ -10,10 +10,10 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_n"
+            android:id="@+id/value_"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Number of trials"
+            android:hint="Value n"
             android:inputType="numberDecimal"
             android:padding="16dp" />
     </android.support.design.widget.TextInputLayout>
@@ -23,20 +23,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_r"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Number of successes"
-            android:inputType="numberDecimal"
-            android:padding="16dp" />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/value_p"
+            android:id="@+id/value_success"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Probability of Success"
