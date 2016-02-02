@@ -41,6 +41,15 @@ public class SRC_Calc_Type {
         return ret;
     }
 
+    public static BigInteger BigPermutation(int n, int k) {
+        BigInteger result = new BigInteger("1");
+        int i;
+        for (i = n - k + 1; i <= n; i++) {
+            result = result.multiply(new BigInteger(Integer.toString(i)));
+        }
+        return result;
+    }
+
     public static Double Combination(Double n, Double r) {
         Double factn = SRC_Calc_Type.factorial(n);
         Double factr = SRC_Calc_Type.factorial(r);
@@ -56,7 +65,10 @@ public class SRC_Calc_Type {
 
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static BigInteger BigFactorial(int n) {
+        return BigPermutation(n, n);
+    }
 
     public static Double factorial(Double n) {
         Double fact = 1.0; // this  will be the result

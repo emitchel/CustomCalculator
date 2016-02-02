@@ -94,4 +94,8 @@ public abstract class CalcBase extends Fragment {
             return new BigInteger("0");
         }
     }
+
+    public boolean isEmpty(EditText et){
+        return !Utils.isValidString(et.getText().toString());
+    }
 }

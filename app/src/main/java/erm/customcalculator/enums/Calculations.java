@@ -5,8 +5,10 @@ import android.content.Context;
 import erm.customcalculator.R;
 import erm.customcalculator.classes.Utils;
 import erm.customcalculator.fragments.ArithmeticFragment;
+import erm.customcalculator.fragments.BinProbFragment;
 import erm.customcalculator.fragments.CalcBase;
 import erm.customcalculator.fragments.CombinationFragment;
+import erm.customcalculator.fragments.PermutationFragment;
 
 /**
  * Created by ellio on 1/31/2016.
@@ -78,9 +80,9 @@ public enum Calculations {
         } else if(eCalc == COMBINATION){
             frag = new CombinationFragment();
         } else if(eCalc == PERMUTATION){
-            frag = new ArithmeticFragment();
+            frag = new PermutationFragment();
         }else if(eCalc == BINOMIAL_PROBABILITY){
-            frag = new ArithmeticFragment();
+            frag = new BinProbFragment();
         }else if(eCalc == GEOMETRIC_PROBABILITY){
             frag = new ArithmeticFragment();
         }else if(eCalc == STD_DEV_SPL_DISTRO){
