@@ -23,6 +23,8 @@ import erm.customcalculator.fragments.CalcBase;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    //CALC-1
+
     public final static String CURRENT_FRAGMENT_TAG = "current_fragment";
     FrameLayout mContent;
 
