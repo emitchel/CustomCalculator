@@ -27,7 +27,7 @@ public class Home extends AppCompatActivity
 
     public final static String CURRENT_FRAGMENT_TAG = "current_fragment";
     FrameLayout mContent;
-
+    //separate merge
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
